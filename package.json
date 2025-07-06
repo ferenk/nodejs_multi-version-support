@@ -1,0 +1,22 @@
+{
+  "name": "node-server-multi-client",
+  "version": "0.0.1",
+  "description": "Node.js server + multi version client demo",
+  "main": "server/index.js",
+  "author": "Moricz, Ferenc",
+  "license": "ISC",
+  "scripts": {
+    "start": "npx tsx server/index.ts"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "node": "^18.20.8",
+    "path": "^0.12.7",
+    "tsx": "^4.20.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "typescript": "^5.8.3"
+  }
+}
