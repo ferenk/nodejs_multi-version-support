@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "start": "npx tsx server/index.ts",
-    "heroku-postbuild": "bash ./scripts/build-all.sh"
+    "heroku-postbuild": "bash ./scripts/fetch-latest-frontend-versions.sh"
   },
   "engines": {
     "node": "22.x"
