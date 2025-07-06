@@ -9,6 +9,9 @@
     "start": "npx tsx server/index.ts",
     "heroku-postbuild": "bash ./scripts/build-all.sh"
   },
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^5.1.0",
