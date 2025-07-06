@@ -1,12 +1,13 @@
 {
-  "name": "node-server-multi-client",
+  "name": "node-server-multi-versions",
   "version": "0.0.1",
-  "description": "Node.js server + multi version client demo",
+  "description": "Node.js backend + frontend (with multiple versions support)",
   "main": "server/index.js",
   "author": "Moricz, Ferenc",
   "license": "ISC",
   "scripts": {
-    "start": "npx tsx server/index.ts"
+    "start": "npx tsx server/index.ts",
+    "heroku-postbuild": "bash ./scripts/build-all.sh"
   },
   "dependencies": {
     "ejs": "^3.1.10",
