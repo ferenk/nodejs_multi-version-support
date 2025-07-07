@@ -18,7 +18,7 @@ function onTextKeyDown(event)
 function onAppVersionChanged(event)
 {
     const clientVersion = event.target.value;
-    const newClientUrl = `http://localhost:8088/client_versions/${ clientVersion }/main.html`;
+    const newClientUrl = `${window.location.protocol}//${window.location.host}/client_versions/${clientVersion}/main.html`;
     // redirect to the new URL
     window.location.href = newClientUrl;
 }

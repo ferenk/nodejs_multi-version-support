@@ -2,7 +2,9 @@ const express = require('express');
 import { Request, Response, Application, NextFunction } from 'express';
 
 var app: Application = express();
-const PORT = 8088;
+
+const DEfAULT_WEB_PORT = 8088;
+const PORT = process.env.PORT || DEfAULT_WEB_PORT;
 
 const path = require('path');
 
