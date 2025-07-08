@@ -21,8 +21,8 @@ jobs:
 
     - name: Collect recently tagged "client" versions
       run: |
-        chmod +x ./scripts/git-collect-recent-client_versions.sh
-        ./scripts/git-collect-recent-client_versions.sh
+        chmod +x ./scripts/github-collect-recent-client_versions.sh
+        ./scripts/github-collect-recent-client_versions.sh
 
     - name: Upload the collected client versions as a released tar.bz2
       uses: softprops/action-gh-release@v1
