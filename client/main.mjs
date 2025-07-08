@@ -5,7 +5,7 @@ function onTextKeyDown(event)
         const textarea = document.getElementById('calculator');
         const inputExpr = textarea.value;
 
-        const resultMsg = `Calculation result: ${inputExpr} = ${ eval(inputExpr) + 1 } (?)`;  // "+1" is the "bug"
+        const resultMsg = `Calculation result: ${inputExpr} = ${ eval(inputExpr) }`;  // "+1" (the "bug") is fixed
         const resEl = document.createElement('div');
         resEl.innerHTML = resultMsg;
         document.body.appendChild(resEl);
