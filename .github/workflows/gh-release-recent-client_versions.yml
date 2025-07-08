@@ -1,5 +1,9 @@
-# .github/workflows/release.yml
+# .github/workflows/gh-release-recent-client_versions.yml
 name: Collect and upload recently released 'client' folders
+
+yaml permissions:
+  contents: read
+  packages: read
 
 on:
   push:
