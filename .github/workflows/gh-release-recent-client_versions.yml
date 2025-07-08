@@ -1,0 +1,33 @@
+# .github/workflows/release.yml
+name: Collect and upload recently released 'client' folders
+
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch all history for all tags
+
+    - name: Collect recently tagged versions of the 'client' folder
+      run: |
+        chmod +x ./scripts/git-collect-recent-client_versions.sh
+        ./scripts/git-collect-recent-client_versions.sh
+
+    - name: Upload the collected client versions as a released tar.bz2
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: latest
+        name: Latest Client Versions
+        body: Automated build with recent client versions
+        files: client_versions.tar.bz2
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
