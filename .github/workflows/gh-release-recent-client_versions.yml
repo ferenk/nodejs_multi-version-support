@@ -1,4 +1,7 @@
 # .github/workflows/gh-release-recent-client_versions.yml
+# warning: Needs "Read & write permissions" (Project settings / Actions / General)
+#          Otherwise it will fail at "Upload the collected ..."
+
 name: Collect and upload recently released 'client' folders
 
 yaml permissions:
@@ -12,7 +15,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
+  create_and_release_client_archive:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -20,7 +23,7 @@ jobs:
       with:
         fetch-depth: 0  # Fetch all history for all tags
 
-    - name: Collect recently tagged versions of the 'client' folder
+    - name: Collect recently tagged "client" versions
       run: |
         chmod +x ./scripts/git-collect-recent-client_versions.sh
         ./scripts/git-collect-recent-client_versions.sh
