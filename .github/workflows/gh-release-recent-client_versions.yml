@@ -4,10 +4,6 @@
 
 name: Collect and upload recently released 'client' folders
 
-yaml permissions:
-  contents: read
-  packages: read
-
 on:
   push:
     tags:
