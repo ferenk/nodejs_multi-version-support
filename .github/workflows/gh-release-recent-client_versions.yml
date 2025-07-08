@@ -6,8 +6,11 @@ name: Collect and upload recently released 'client' folders
 
 on:
   push:
-    tags:
-      - '*'
+    branches: [main]
+    tags: ['*']
+  pull_request:
+    branches: [main]
+    types: [closed]
   workflow_dispatch:
 
 jobs:
